@@ -18,7 +18,7 @@ const Dash = (props) => {
       
 
     const logout = () => {
-        axios.post('http://localhost:8000/api/logout', {}, {withCredentials: true})
+        axios.post('http://localhost:8000/api/logout', {})
             .then(res=>{
                 navigate('/login');
             })
@@ -34,7 +34,7 @@ const Dash = (props) => {
     }
 
     useEffect(()=>{
-    	axios.get("http://localhost:8000/api/employee/all", employee, {withCredentials: true})
+    	axios.get("http://localhost:8000/api/employee/all", employee)
     	.then((res)=>{
 	    console.log(res.data);
             setEmployee(res.data);
@@ -76,7 +76,7 @@ const Dash = (props) => {
                     <div className="border border-black bg-neutral-100 rounded-lg shadow-lg shadow-black container text-center m-3" >
                         <div className="row">
                             <div className="border border-black col">
-                              <img className="m-3" src={Employee} alt="" />
+                              <img className="m-1" src={Employee} alt="" />
                                 <h1 className="text-2xl p-4">{employee.name}</h1>
                             </div>
                             <div className="border border-black col ">

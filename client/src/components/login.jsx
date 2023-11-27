@@ -19,7 +19,7 @@ const Login = () => {
 
   const loginHandleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:8000/api/login', currEmployee, {withCredentials: true})
+    axios.post('http://localhost:8000/api/login', currEmployee)
             .then(res=>{
                 console.log(res.data);
                 navigate('/dashboard');

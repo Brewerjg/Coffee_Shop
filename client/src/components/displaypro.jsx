@@ -19,7 +19,7 @@ const Displaypro = (props) => {
     }
 
     useEffect(()=>{
-    	axios.get("http://localhost:8000/api/product/all", product, {withCredentials: true})
+    	axios.get("http://localhost:8000/api/product/all", product)
     	.then((res)=>{
 	    console.log(res.data);
             setProduct(res.data);

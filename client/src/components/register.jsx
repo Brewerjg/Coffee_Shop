@@ -21,7 +21,7 @@ const Register = () => {
     
       const registerHandleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8000/api/register', newEmployee, {withCredentials: true})
+        axios.post('http://localhost:8000/api/register', newEmployee)
                 .then(res=>{
                     console.log(res.data);
                     navigate('/dashboard');
@@ -29,7 +29,7 @@ const Register = () => {
                 })
                 .catch((err) => {
                     console.log(err)
-                    
+                    navigate('/dashboard')
             }); 
         }
   return (
